@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { BsPerson } from "react-icons/bs";
 import { useSelector } from 'react-redux';
 import { API_KEY } from '../Constant/Youtube';
 
@@ -23,7 +22,7 @@ const VideoCart = ({item}) => {
     },[])
 
   return (
-    <div className='flex flex-col gap-2 mb-6'>
+    <div className='flex flex-col gap-2 mb-6'>    
         <img className={`${open ?'w-full rounded-lg': 'w-full rounded-lg'}`} src={item.snippet.thumbnails.high.url} alt="Yt video" />
         <div className='flex gap-2'>
             <div className='pt-1  w-[70px]'>
@@ -33,7 +32,7 @@ const VideoCart = ({item}) => {
             <h1 className='font-semibold'>{item.snippet.title}</h1>
              <p className='text-gray-500'>{item.snippet.channelTitle}</p>
             </div>
-        </div>
+        </div>    
     </div>
   )
 }

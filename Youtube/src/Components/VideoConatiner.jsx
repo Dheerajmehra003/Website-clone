@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
-import { API_KEY } from '../Constant/Youtube';
 import { YOUTUBE_VIDEO_API } from '../Constant/Youtube';
 import VideoCart from './VideoCart';
+import { Link } from 'react-router-dom';
 
 export const VideoConatiner = () => {
   const [video , setvideo] = useState([])
@@ -29,7 +29,9 @@ export const VideoConatiner = () => {
       video.map((item) => {
       return(
         <div >
+          <Link to={`/watch/${item.id}`}>
         <VideoCart key={item.id} item={item} />
+        </Link>
         </div>
       )
     })
