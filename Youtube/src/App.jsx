@@ -11,7 +11,7 @@ function App() {
     <>
       <div>
        <Navbar/>
-       <div className='flex'>
+       <div className='flex '>
        <Sidebar/>
        <Feed/>
        </div>

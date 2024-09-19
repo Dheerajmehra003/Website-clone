@@ -7,7 +7,7 @@ export const ButtonList = () => {
 
   return (
     // <div>
-    <div className=' relative ml-4 flex gap-3 pt-6 pb-6'>
+    <div className='fixed bg-white w-full ml-4 flex gap-3 pt-5 pb-4 z-10'>
      {
         buttonList.map((buttonName,index)=>{
             return (<button  key={index} className='bg-gray-200 rounded-lg font-semibold pt-[2px] pb-[2px] pl-[5px] pr-[5px] whitespace-nowrap'>{buttonName}</button>)

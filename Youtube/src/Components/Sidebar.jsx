@@ -21,6 +21,7 @@ import { GoTrophy } from "react-icons/go";
 import { PiLightbulb } from "react-icons/pi";
 import { GiHanger } from "react-icons/gi";
 import { RiSignalTowerLine } from "react-icons/ri";
+import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
 
@@ -114,23 +115,26 @@ const Sidebar = () => {
     },
  ]
 
+ const open = useSelector((store)=>store.app.open)
+
   return (
-    <div className='flex flex-col gap-y-2  mt-[58px] relative left-0 w-auto h-[calc(100vh-4.625rem)] bg-white overflow-y-auto '>
+    <div className={`${open?'flex flex-col gap-y-2  mt-[58px]  fixed left-0 bottom-0 top-[1px] h-full  w-[20%]] bg-white overflow-y-scroll ': ' fixed  mt-[58px] overflow-hidden'}`}>
         <div className='mt-5 pr-2 ml-2'>
         {
             sideBarItem.map((item,index)=>{
                 return (
-                    <div key={index} className='flex items-center gap-5 hover:bg-slate-200 pt-2 pb-2 pl-2 hover:rounded-lg w-[200px] cursor-pointer '>
-                     {item.icon}
-                     <p>{item.title}</p>
+                    <div key={index} className={`${open ? 'flex items-center gap-5 hover:bg-slate-200 pt-2 pb-2 pl-2 hover:rounded-lg w-[200px]  cursor-pointer ': 'flex flex-col items-center justify-center hover:rounded-lg hover:bg-slate-200 pt-[10px] pb-[20px] cursor-pointer'}`}>
+                      <p className={`${open ? '': ''}`}> {item.icon}</p>
+                     <p className={` ${open ? "" : ' text-xs'}`}>{item.title}</p>
+                     {/* <p className='hidden'>{item.title}</p> */}
                     </div>
 
                 )
             })
         }
         </div>
-         <p className='border-b-2  w-[96%] border-gray-200 ml-2'></p>
-         <div className='mt-1 pr-2 ml-2'>
+         <p className={`${open ?'border-b-2  w-[96%] border-gray-200 ml-2':'hidden'}`}></p>
+         <div className={`${open ?'mt-1 pr-2 ml-2':'hidden'}`}>
          <div className='flex items-center gap-3 hover:bg-slate-200 pt-2 pb-2 pl-3 hover:rounded-lg w-[200px] cursor-pointer '>
             <p className='font-semibold'>You</p>
             <IoIosArrowForward  />
@@ -147,8 +151,8 @@ const Sidebar = () => {
             })
         }
         </div>
-         <p className='border-b-2  w-[96%] border-gray-200 ml-2'></p>
-         <div className='mt-1 pr-2 ml-2'>
+        <p className={`${open ?'border-b-2  w-[96%] border-gray-200 ml-2':'hidden'}`}></p>
+        <div className={`${open ?'mt-1 pr-2 ml-2':'hidden'}`}>
          <div className='flex items-center gap-3 hover:bg-slate-200 pt-2 pb-2 pl-3 hover:rounded-lg w-[200px] cursor-pointer '>
             <p className='font-semibold'>Explore</p>
             </div>
