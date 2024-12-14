@@ -17,7 +17,7 @@
 .loginForm h1{
     font-size: 32px;
     font-weight: 500;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
 }
 .loginForm input{
     width: 100%;
@@ -64,4 +64,14 @@
 .remember input{
     width: 18px;
     height: 18px;
+}
+.formSwitch{
+    margin-top: 40px;
+    color: #737373;
+}
+.formSwitch span{
+    margin-left: 6px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
 }
