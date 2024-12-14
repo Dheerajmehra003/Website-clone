@@ -56,3 +56,47 @@
 .moreCards{
     padding-left: 6%;
 }
+
+@media(max-width: 1024px) {
+   .heroCaption .titleCards{
+     display: none;
+   }
+   .herobtns{
+    margin-bottom: 30px;
+   }
+}
+@media(max-width: 768px) {
+   .heroCaption{
+    padding-left: 4%;
+    /* margin-top: 50px; */
+   }
+   .captionImage{
+    margin-bottom: 10px;
+    width: 40%;
+   }
+   .heroCaption p{
+    font-size: 12px;
+    margin-bottom: 10px;
+   }
+   .herobtns .btn img{
+    width: 20px;
+    }
+    .moreCards{
+        padding-left: 4%;
+    }
+
+}
+
+@media(max-width: 500px) {
+    .captionImage{
+        display: none;
+    }
+     .herobtns .btn img{
+        width: 15px;
+    }
+     .herobtns .btn{
+        padding: 4px 10px;
+        gap: 5px;
+        font-size: 10px;
+    }
+}
